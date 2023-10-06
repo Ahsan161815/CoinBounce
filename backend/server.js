@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const db = require('./database/database');
 const {PORT} = require('./config/config');
+const router = require('./routes/routes');
 
-app.get('/', (req, res, next) => {
-    res.send('Hello World!');
-})
+app.use(router);
 
 db();
 
